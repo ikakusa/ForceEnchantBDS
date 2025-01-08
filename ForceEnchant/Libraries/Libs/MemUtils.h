@@ -9,11 +9,11 @@ class FuncHook;
 class MemoryUtils {
 private:
 	static uintptr_t getBase() {
-		static uintptr_t mc = reinterpret_cast<uintptr_t>(GetModuleHandleA("Minecraft.Windows.exe"));
+		static uintptr_t mc = reinterpret_cast<uintptr_t>(GetModuleHandleA("bedrock_server.exe"));
 		return mc;
 	}
 	static unsigned long GetMinecraftSize() {
-		HMODULE base = GetModuleHandleA("Minecraft.Windows.exe");
+		HMODULE base = GetModuleHandleA("bedrock_server.exe");
 		if (!base) return 0;
 
 		MODULEINFO moduleInfo;
@@ -122,7 +122,7 @@ __forceinline static bool CreateHook(std::unique_ptr<FuncHook>& breh, uintptr_t 
 }
 
 __forceinline static uintptr_t getBaseAddress() {
-	static const auto rangeStart = (uintptr_t)GetModuleHandleA("Minecraft.Windows.exe");
+	static const auto rangeStart = (uintptr_t)GetModuleHandleA("bedrock_server.exe");
 	return rangeStart;
 }
 
