@@ -4,6 +4,7 @@
 # How to use
 
 ### You can use this extension by the injector
+### Inject this dll to the "bedrock_server.exe"
 
 ### injector is [here](https://github.com/ikakusa/DebugInjector)
 
